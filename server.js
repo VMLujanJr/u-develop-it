@@ -1,6 +1,8 @@
 /* CREATE A CONNECTION TO THE EXPRESS.JS SERVER TO HOST THE APPLICATION */
 // ...import express
 const express = require('express');
+// ...2... import mySQL2 package
+const mysql = require('mysql2');
 // ...add PORT designation
 const PORT = process.env.PORT || 3001;
 // ...add app expression
@@ -10,6 +12,18 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+// ...2... connect application to mySQL database
+const db = mysql.createConnection(
+    {
+        host: 'localhost',
+        // mySQL username
+        user: 'root',
+        // mySQL password
+        password: 'ohmyglob1994',
+        database: 'election'
+    },
+    console.log('Connected to the election database.')
+);
 // ...lastly, create a GET test route
 /* app.get('/', (req, res) => {
     res.json({
