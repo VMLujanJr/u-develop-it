@@ -31,6 +31,11 @@ const db = mysql.createConnection(
     });
 }); */
 
+// THIS METHOD ALLOWS SQL commands to be written in a NODE.js app
+// return all the data in the candidates table
+db.query(`SELECT * FROM candidates`, (err, rows) => {
+    console.log(rows);
+});
 
 // Default response for any other request (Not Found)
 // ...add a route to handle user requests that aren't supported by the app
