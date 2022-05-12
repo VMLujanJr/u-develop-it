@@ -34,6 +34,9 @@ const db = mysql.createConnection(
     });
 }); */
 
+// ***************************************************
+// Create, Read, Update, & Delete (CRUD) API endpoints
+// ***************************************************
 // Get all candidates
 app.get('/api/candidates', (req, res) => {
     // THIS METHOD ALLOWS SQL commands to be written in a NODE.js app
